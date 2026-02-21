@@ -1,0 +1,27 @@
+payload:
+  # Anthropic (Claude)
+  - claude.ai
+  - anthropic.com
+
+  # Google Gemini
+  - gemini.google.com
+  - aistudio.google.com
+  - generativelanguage.googleapis.com
+
+  # Microsoft Copilot
+  - sydney.bing.com
+  - copilot.microsoft.com
+  - copilot.cloud.microsoft
+
+  # OpenAI
+  - openai.com
+  - chatgpt.com
+  - oaistatic.com
+  - oaiusercontent.com
+
+  # OpenCode
+  - opencode.ai
+
+  # xAI (Grok)
+  - x.ai
+  - grok.com
