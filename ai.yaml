@@ -25,3 +25,7 @@ payload:
   # xAI (Grok)
   - x.ai
   - grok.com
+
+  # Groq
+  - api.grok.com
+  - console.grok.com
