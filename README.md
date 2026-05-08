@@ -1,3 +1,15 @@
+# clash-rules
+
+Clash proxy rules for AI providers blocked in China.
+
+### Cache
+
+jsDelivr CDN caches `@master` branch for up to **12 hours**. Force refresh:
+
+https://www.jsdelivr.com/tools/purge
+
+---
+
 ```yaml
 HttpRule: &HttpRule { type: http, behavior: domain, interval: 86400 }
 

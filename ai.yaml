@@ -30,5 +30,3 @@ payload:
   # xAI (Grok)
   - x.ai
   - grok.com
-  - api.grok.com
-  - console.grok.com
