@@ -22,13 +22,13 @@ payload:
   # OpenCode
   - opencode.ai
 
+  # Groq
+  - groq.com
+  - api.groq.com
+  - console.groq.com
+
   # xAI (Grok)
   - x.ai
   - grok.com
   - api.grok.com
   - console.grok.com
-
-  # Groq (LPU inference for LLMs + Whisper ASR)
-  - api.groq.com
-  - console.groq.com
-  - groq.com
