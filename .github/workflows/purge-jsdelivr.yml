@@ -1,0 +1,37 @@
+name: Purge jsDelivr cache
+
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - "*.yaml"
+      - "README.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge jsDelivr URLs
+        env:
+          OWNER: superos
+          REPO: clash-rules
+        run: |
+          set -e
+          BRANCH="${GITHUB_REF_NAME:-master}"
+
+          urls=(
+            "https://purge.jsdelivr.net/gh/${OWNER}/${REPO}@${BRANCH}/ai.yaml"
+            "https://purge.jsdelivr.net/gh/${OWNER}/${REPO}@${BRANCH}/hk.yaml"
+            "https://purge.jsdelivr.net/gh/${OWNER}/${REPO}@${BRANCH}/README.md"
+          )
+
+          for url in "${urls[@]}"; do
+            echo "Purging $url"
+            curl -fsSL -X GET "$url" || curl -fsSL -X POST "$url" || true
+          done
