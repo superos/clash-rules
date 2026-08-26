@@ -4,22 +4,28 @@ Clash proxy rules for AI providers blocked in China.
 
 ### Cache
 
-jsDelivr CDN caches `@master` branch for up to **12 hours**. Force refresh:
+jsDelivr CDN caches the `@master` branch for up to **12 hours**. If you modify `ai.yaml`, `hk.yaml`, or any rule file, new clients may still pull stale content until the cache expires or is purged.
+
+Force refresh:
 
 https://www.jsdelivr.com/tools/purge
+
+Also consider pinning to a commit hash for production stability.
 
 ---
 
 ```yaml
-HttpRule: &HttpRule { type: http, behavior: domain, interval: 86400 }
-
-...
+HttpDomainRule: &HttpDomainRule { type: http, behavior: domain, interval: 86400 }
+HttpIPRule: &HttpIPRule { type: http, behavior: ipcidr, interval: 86400 }
 
 rule-providers:
-  ai: { <<: *HttpRule, url: https://cdn.jsdelivr.net/gh/superos/clash-rules/ai.yaml, path: ./ruleset/ai.yaml }
+  hk: { <<: *HttpIPRule, url: https://cdn.jsdelivr.net/gh/superos/clash-rules/hk.yaml, path: ./ruleset/hk.yaml }
+  ai: { <<: *HttpDomainRule, url: https://cdn.jsdelivr.net/gh/superos/clash-rules/ai.yaml, path: ./ruleset/ai.yaml }
 
 rules:
-  - ...
-  - RULE-SET, ai, US
-  - MATCH, DIRECT
+  - RULE-SET,hk,DIRECT
+  - RULE-SET,ai,US
+  - MATCH,DIRECT
 ```
+
+`hk.yaml` is used for direct access to Hong Kong cloud ranges and should be placed before the AI provider rules so those IP ranges bypass the proxy.
