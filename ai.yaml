@@ -1,7 +1,12 @@
 payload:
   # Anthropic (Claude)
-  - claude.ai
-  - anthropic.com
+  - anthropic.com            # 核心:API · console · statsig · status
+  - clau.de                  # CLI 输出短链
+  - claude.ai                # Web 对话 · backend-api · rooms
+  - claude.com               # platform 控制台 · OAuth 登录
+  - claudeusercontent.com    # Artifact · 图片 · 文件预览
+  - downloads.claude.ai      # 应用/CLI 更新下载
+  - modelcontextprotocol.io  # MCP 规范站
 
   # Google Gemini
   - gemini.google.com
@@ -14,10 +19,11 @@ payload:
   - copilot.cloud.microsoft
 
   # OpenAI
-  - openai.com
-  - chatgpt.com
-  - oaistatic.com
-  - oaiusercontent.com
+  - chatgpt.com             # 登录鉴权 · Codex 默认链路 backend-api/codex/responses
+  - cdn.openai.com          # Codex 模型/配置/更新下载(官方防火墙白名单明确列出)
+  - oaistatic.com           # 静态资源(桌面壳 UI 资产)
+  - oaiusercontent.com      # 附件/文件(截图、上下文文件)
+  - openai.com              # 核心:api · auth · platform · status
 
   # OpenCode
   - opencode.ai
