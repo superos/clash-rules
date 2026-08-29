@@ -1,38 +1,35 @@
 payload:
   # Anthropic (Claude)
-  - anthropic.com            # 核心:API · console · statsig · status
-  - clau.de                  # CLI 输出短链
-  - claude.ai                # Web 对话 · backend-api · rooms
-  - claude.com               # platform 控制台 · OAuth 登录
-  - claudeusercontent.com    # Artifact · 图片 · 文件预览
-  - downloads.claude.ai      # 应用/CLI 更新下载
-  - modelcontextprotocol.io  # MCP 规范站
+  - '+.anthropic.com'           # API/控制台
+  - '+.clau.de'                 # CLI 短链
+  - '+.claude.ai'               # Web 对话
+  - '+.claude.com'              # 平台/OAuth
+  - '+.claudeusercontent.com'   # 文件/Artifact
+  - '+.modelcontextprotocol.io' # MCP 规范
 
   # Google Gemini
-  - gemini.google.com
-  - aistudio.google.com
-  - generativelanguage.googleapis.com
-
-  # Microsoft Copilot
-  - sydney.bing.com
-  - copilot.microsoft.com
-  - copilot.cloud.microsoft
-
-  # OpenAI
-  - chatgpt.com             # 登录鉴权 · Codex 默认链路 backend-api/codex/responses
-  - cdn.openai.com          # Codex 模型/配置/更新下载(官方防火墙白名单明确列出)
-  - oaistatic.com           # 静态资源(桌面壳 UI 资产)
-  - oaiusercontent.com      # 附件/文件(截图、上下文文件)
-  - openai.com              # 核心:api · auth · platform · status
-
-  # OpenCode
-  - opencode.ai
+  - '+.ai.google.dev'                     # 开发者/Key
+  - '+.aistudio.google.com'               # AI Studio
+  - '+.gemini.google.com'                 # Gemini 网页
+  - '+.generativelanguage.googleapis.com' # Gemini API
+  - '+.oauth2.googleapis.com'             # OAuth 令牌
 
   # Groq
-  - groq.com
-  - api.groq.com
-  - console.groq.com
+  - '+.groq.com' # 主站/api/console
+
+  # Microsoft Copilot
+  # - '+.copilot.cloud.microsoft' # 企业(走香港)
+  # - '+.copilot.microsoft.com'   # Web(走香港)
+  # - '+.sydney.bing.com'         # 聊天后端(走香港)
+
+  # OpenAI
+  - '+.chatgpt.com'          # Web/API
+  - '+.oaistatic.com'        # 静态资源
+  - '+.oaiusercontent.com'   # 文件
+  - '+.openai.com'           # 主站/平台
+  - '+.sora.com'             # 视频
 
   # xAI (Grok)
-  - x.ai
-  - grok.com
+  - '+.grok.com'  # Web 对话
+  - '+.x.ai'      # API/控制台
+  - '+.x.com'     # X 登录
