@@ -19,8 +19,8 @@ HttpDomainRule: &HttpDomainRule { type: http, behavior: domain, interval: 86400 
 HttpIPRule: &HttpIPRule { type: http, behavior: ipcidr, interval: 86400 }
 
 rule-providers:
-  hk: { <<: *HttpIPRule, url: https://cdn.jsdelivr.net/gh/superos/clash-rules/hk.yaml, path: ./ruleset/hk.yaml }
-  ai: { <<: *HttpDomainRule, url: https://cdn.jsdelivr.net/gh/superos/clash-rules/ai.yaml, path: ./ruleset/ai.yaml }
+  hk: { <<: *HttpIPRule, url: https://cdn.jsdelivr.net/gh/superos/clash-rules@main/hk.yaml, path: ./ruleset/hk.yaml }
+  ai: { <<: *HttpDomainRule, url: https://cdn.jsdelivr.net/gh/superos/clash-rules@main/ai.yaml, path: ./ruleset/ai.yaml }
 
 rules:
   - RULE-SET,hk,DIRECT
